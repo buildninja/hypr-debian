@@ -93,6 +93,7 @@ dependencies=(
     linux-headers-$(uname -r)
     libva-wayland2
     nvidia-vaapi-driver
+    kitty
 )
 
 for PKG1 in "${dependencies[@]}"; do
@@ -110,3 +111,7 @@ sudo make install
 
 # Add nvidia-drm.modeset=1 to /etc/default/grub>GRUB_CMDLINE_LINUX
 # sudo update-grub
+
+
+# .config/hypr/hyprland.conf
+# env = WLR_NO_HARDWARE_CURSORS,1
