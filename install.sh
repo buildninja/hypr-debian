@@ -96,6 +96,7 @@ dependencies=(
     kitty
 )
 
+# Install dependencies
 for PKG1 in "${dependencies[@]}"; do
   sudo apt-get install -y  "$PKG1"
 done
@@ -103,15 +104,17 @@ done
 sudo apt build-dep wlroots
 export PATH=$PATH:/usr/local/go/bin
 
+# Build hyprland
 git clone --recursive https://github.com/hyprwm/Hyprland
 cd Hyprland
-# sed 's/glFlush();/glFinish();/g' -i subprojects/wlroots/render/gles2/renderer.c
+make all
+sudo make install
+
+# Build xdg-desktop-portal-hyprland
+git clone --recursive https://github.com/hyprwm/xdg-desktop-portal-hyprland
+cd xdg-desktop-portal-hyprland/
 make all
 sudo make install
 
 # Add nvidia-drm.modeset=1 to /etc/default/grub>GRUB_CMDLINE_LINUX
 # sudo update-grub
-
-
-# .config/hypr/hyprland.conf
-# env = WLR_NO_HARDWARE_CURSORS,1
