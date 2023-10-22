@@ -94,6 +94,7 @@ dependencies=(
     libva-wayland2
     nvidia-vaapi-driver
     kitty
+    polkit-kde-agent-1
 )
 
 # Install dependencies
