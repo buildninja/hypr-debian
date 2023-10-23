@@ -117,5 +117,12 @@ cd xdg-desktop-portal-hyprland/
 make all
 sudo make install
 
-# Add nvidia-drm.modeset=1 to /etc/default/grub>GRUB_CMDLINE_LINUX
-# sudo update-grub
+# Add nvidia-drm.modeset=1 to grub if it is not already there
+PARAM="nvidia-drm.modeset=1"
+CURRENT_CMDLINE_PARAMS=$(grep ^GRUB_CMDLINE_LINUX= /etc/default/grub | sed 's/GRUB_CMDLINE_LINUX="//;s/"$//')
+if [[ "$CURRENT_CMDLINE_PARAMS" != *"$PARAM"* ]]; then
+    NEW_CMDLINE_LINUX="GRUB_CMDLINE_LINUX=\"$CURRENT_CMDLINE_PARAMS $PARAM\""
+    sudo sed -i "s/^GRUB_CMDLINE_LINUX=.*$/$NEW_CMDLINE_LINUX/" /etc/default/grub
+    sudo update-grub
+    echo "$PARAM has been added to GRUB_CMDLINE_LINUX."
+fi
