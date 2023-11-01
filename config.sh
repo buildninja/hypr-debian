@@ -2,6 +2,7 @@
 
 dependencies=(
     neofetch
+    htop
     cava
     flatpak
     pipewire
