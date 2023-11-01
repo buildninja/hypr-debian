@@ -8,6 +8,7 @@ dependencies=(
     pipewire
     dunst
     waybar
+    tmux
 )
 
 for PKG1 in "${dependencies[@]}"; do
