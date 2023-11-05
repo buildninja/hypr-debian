@@ -21,4 +21,5 @@ for PKG1 in "${dependencies[@]}"; do
   sudo apt-get install -y  "$PKG1"
 done
 
-tldr -u
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub com.discordapp.Discord
