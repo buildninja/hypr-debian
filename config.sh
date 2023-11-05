@@ -16,6 +16,7 @@ dependencies=(
     pavucontrol
     firefox-esr
     vlc
+    qbittorrent
 )
 
 for PKG1 in "${dependencies[@]}"; do
