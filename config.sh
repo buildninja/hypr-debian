@@ -7,6 +7,7 @@ dependencies=(
     flatpak
     pipewire
     dunst
+    wofi
     waybar
     tmux
     unzip
@@ -25,3 +26,4 @@ done
 
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.discordapp.Discord
+flatpak install flathub com.usebottles.bottles
