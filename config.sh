@@ -15,6 +15,7 @@ dependencies=(
     alacritty
     pavucontrol
     firefox-esr
+    vlc
 )
 
 for PKG1 in "${dependencies[@]}"; do
