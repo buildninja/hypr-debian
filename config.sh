@@ -12,7 +12,9 @@ dependencies=(
     unzip
     swaybg
     tldr
+    alacritty
     pavucontrol
+    firefox-esr
 )
 
 for PKG1 in "${dependencies[@]}"; do
