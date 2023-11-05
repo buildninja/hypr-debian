@@ -98,7 +98,7 @@ dependencies=(
 )
 
 # Add non-free and contrib to sources.list
-sed -i '/http:/ s/$/ non-free contrib/' /etc/apt/sources.list
+sudo sed -i '/http:/ s/$/ non-free contrib/' /etc/apt/sources.list
 
 sudo apt update && sudo apt upgrade
 
