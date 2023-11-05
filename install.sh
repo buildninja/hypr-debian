@@ -97,6 +97,11 @@ dependencies=(
     polkit-kde-agent-1
 )
 
+# Add non-free and contrib to sources.list
+sed -i '/http:/ s/$/ non-free contrib/' /etc/apt/sources.list
+
+sudo apt update && sudo apt upgrade
+
 # Install dependencies
 for PKG1 in "${dependencies[@]}"; do
   sudo apt-get install -y  "$PKG1"
