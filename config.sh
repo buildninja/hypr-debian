@@ -18,6 +18,7 @@ dependencies=(
     firefox-esr
     vlc
     qbittorrent
+    keepassxc
 )
 
 for PKG1 in "${dependencies[@]}"; do
